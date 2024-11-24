@@ -1,0 +1,110 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://cdn.pixabay.com/photo/2020/03/23/16/50/coffee-4961399_640.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  transition: opacity 1s ease;
+}
+.background-image {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInOverlay 2s ease-out forwards;
+}
+
+.menu-container {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 15%;
+  opacity: 0;
+  animation: fadeInMenu 2s ease-out forwards;
+  animation-delay: 1s; 
+}
+
+h1.menu-title {
+  font-size: 2rem;
+}
+
+.explore-text {
+  font-size: 1.2rem;
+  color: #f4a261;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  opacity: 0;
+  animation: fadeInLink 2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+.explore-text:hover {
+  color: #e76f51;
+  transform: scale(1.1); 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLink {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
